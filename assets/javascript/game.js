@@ -156,34 +156,36 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
                 
                 
                 var crystalValueStat = ([Math.floor(Math.random() * 13) + 1]); //generate random crystal value between 1 - 12
-               
-                crystalValueArr.push(crystalValueStat);
-                
+
+                var intCrystalValue = parseInt(crystalValueStat);
+
+                crystalValueArr.push(intCrystalValue);
+
                 console.log("crystal one: " + crystalValueStat);
             }
-        // });
+
             console.log(crystalValueArr);
 
             $("#crystalValue").on("click", function() {
                 
-                $(".yourNumber").html(crystalValueStat[0]);
+                $(".yourNumber").html(crystalValueArr[0]);
                 
             }); 
             
             $("#crystalValueTwo").on("click", function() {
-                $(".yourNumber").html(crystalValueStat[0]);
+                $(".yourNumber").html(crystalValueArr[1]);
                 
             }); 
 
             $("#crystalValueThree").on("click", function() {
 
-                $(".yourNumber").html(crystalValueStat[0]);
+                $(".yourNumber").html(crystalValueArr[2]);
                 
             }); 
 
             $("#crystalValueFour").on("click", function() {
 
-                $(".yourNumber").html(crystalValueStat[0]);
+                $(".yourNumber").html(crystalValueArr[3]);
                 
             }); 
 
