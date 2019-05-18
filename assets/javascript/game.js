@@ -8,13 +8,15 @@ var compNumber = [Math.floor(Math.random() * 120) + 19];
 
 var crystalValueArr;
 var crystalValueOne = $("#crystalValue");
-var crystalValueTwo = $("#crystalValueTwo"); //crystalValueArr[1];
-var crystalValueThree = $("#crystalValueThree"); //crystalValueArr[2];
-var crystalValueFour = $("#crystalValueFour"); //crystalValueArr[3];
+var crystalValueTwo = $("#crystalValueTwo"); 
+var crystalValueThree = $("#crystalValueThree"); 
+var crystalValueFour = $("#crystalValueFour"); 
 
 $(document).ready(function() { //Checking if the page is ready to load the game.
 
     function initializeGame() { //Initializing the game on page load.
+
+      compNumber = [Math.floor(Math.random() * 120) + 19];
 
        chosenNumber.text("Match my number: " + compNumber); //chosen number will be anywhere between 19 - 120.
        
@@ -48,10 +50,14 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
     function assignCrystalValue() { //Assigning the crystals different values every time game initiates
 
         //crystal buttons
-        
+        // var updateYourNumber = yourNumber += crystalValueArr[i]; potential solution
+         
+
         $("#crystalValue").on("click", function() {
-                
-            $(".yourNumber").html(yourNumber += crystalValueArr[0]);
+
+            yourNumber = yourNumber + crystalValueArr[0];
+
+            $(".yourNumber").html(yourNumber);
 
             winGame();
             loseGame();
@@ -60,7 +66,9 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
         
         $("#crystalValueTwo").on("click", function() {
 
-            $(".yourNumber").html(yourNumber += crystalValueArr[1]);
+            yourNumber = yourNumber + crystalValueArr[1];
+
+            $(".yourNumber").html(yourNumber);
 
             winGame();
             loseGame();
@@ -69,7 +77,9 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
         $("#crystalValueThree").on("click", function() {
 
-            $(".yourNumber").html(yourNumber += crystalValueArr[2]);
+            yourNumber = yourNumber + crystalValueArr[2];
+
+            $(".yourNumber").html(yourNumber);
 
             winGame();
             loseGame();
@@ -78,76 +88,56 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
         $("#crystalValueFour").on("click", function() {
 
-            $(".yourNumber").html(yourNumber += crystalValueArr[3]);
+            yourNumber = yourNumber + crystalValueArr[3];
+
+            $(".yourNumber").html(yourNumber);
 
             winGame();
             loseGame();
             
         }); 
         
-        
     }
-
-    //TODO: add win/loss counter if user hits or goes over comp number
-    
-    // function wlCounter() { //Counts user wins if user is able to match their number to the computer number
-
-    //     // if user number is equal to the random generated number
-    //     // increment winCounter by 1
-    //     // display on screen
-    //     // restart game
-
-    //     // if user number is greater than or equal to the random generated number
-    //     // increment lossCounter by 1
-    //     // display on screen
-    //     // restart game
-        
-    //     // if (yourNumber === compNumber) { //if user number is equal to random generated number
-
-    //     //     winCounter++; // increement win counter by 1, if condition is met.
-
-    //     //     $(".winCounter").html("Wins: " + winCounter); //display number of wins on HTML 
-
-    //         // initializeGame(); //re-initialize game
-            
-    //     // } else if (yourNumber > compNumber) { //if user number is greater than or equal to random generated number
-
-    //     //     lossCounter++; //increase loss counter by 1
-
-    //     //     $(".lossCounter").html("Losses: " + lossCounter); //display loss counter on HTML
-
-    //     //     // initializeGame(); // re-initialize game
-
-    //     // }
-
-    //     console.log(compNumber);
-    //     console.log(yourNumber);
-    //     console.log(winCounter);
-    //     console.log(lossCounter);
-    // }
 
     function winGame() {
 
+        console.log(yourNumber);
+        console.log(compNumber);
+        console.log(yourNumber === compNumber);
+
         if (yourNumber === compNumber) { //if user number is equal to random generated number ---------- this isn't registering wins, but losses are registering?
 
-            winCounter++; // increement win counter by 1, if condition is met.
+            winCounter++; // increment win counter by 1, if condition is met.
 
             $(".winCounter").html("Wins: " + winCounter); //display number of wins on HTML 
 
+            yourNumber = 0;
+
+            $(".yourNumber").html(yourNumber);
+            
             initializeGame();
+
+            console.log(winCounter);
         }
 
     }
 
     function loseGame() {
-
+        
         if (yourNumber > compNumber) {
 
             lossCounter++;
 
             $(".lossCounter").html("Losses: " + lossCounter);
 
+            yourNumber = 0;
+
+            $(".yourNumber").html(yourNumber);
+
             initializeGame();
+
+            console.log(lossCounter);
+            console.log(yourNumber);
         }
 
     }

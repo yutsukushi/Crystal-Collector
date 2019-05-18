@@ -4,7 +4,7 @@ p {
 
 body {
     font-family: 'Press Start 2P', cursive;
-    background-image: url("/assets/images/tic-tac-toe.png");
+    background-image: url("../images/tic-tac-toe.png");
 }
 
 .scoreboard {
@@ -14,5 +14,5 @@ body {
 img {
     width: 200px;
     height: auto;
-
 }
+
