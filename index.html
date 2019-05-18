@@ -4,30 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystal Collector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>CrystalsCollector!</h1>
-    
-    <section>
-        <h2>Rules of Crystal Collecter</h2>
-        <p>Collect as many crystals as you can by clicking on the 4 crystals provided to match the number that generates.</p>
-        <p>You'll soon realize that each crystal holds a different value. The only way to find the value of each crystal is to click on it.</p>
-        <p>You win the game by matching your crystal score to the number on the board.</p>
-        <p>You will lose if your crystal score goes over the number on the board.</p>
 
-        <p class="chosenNumber">Match my number: </p>
-        <p class="winCounter">Wins: </p>
-        <p class="lossCounter">Losses: </p>
-        <img id="crystalValue" src="assets/images/crystalOne.png" alt=""> 
-        <img id="crystalValueTwo" src="assets/images/crystalTwo.png" alt="">
-        <img id="crystalValueThree" src="assets/images/crystalThree.png" alt="">
-        <img id="crystalValueFour" src="assets/images/crystalFour.png" alt="">
-        <p>Your total score is:</p>
-        <p class="yourNumber">0</p>
-    </section>
+    <div class="container">
+        <div class="rows col-md-12 text-center mt-5 mb-5">
+            <h1>CrystalsCollector!</h1>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="rows col-md-6 float-left">
+            <section class="rulesOfTheGame">
+                <h3>Rules of Crystal Collecter</h3>
+                <br>
+                <p>Collect as many crystals as you can by clicking on the 4 crystals provided to match the number that generates.</p>
+                <p>You'll soon realize that each crystal holds a different value. The only way to find the value of each crystal is to click on it.</p>
+                <p>You win the game by matching your crystal score to the number on the board.</p>
+                <p>You will lose if your crystal score goes over the number on the board.</p>
+            </section>
+        </div>
+
+        <div class="rows col-md-6 text-center float-right">
+            <section class="scoreboard">
+                <h3>Scoreboard</h3>
+                <br>
+                <p class="chosenNumber">Match my number: </p>
+                <p class="winCounter">Wins: </p>
+                <p class="lossCounter">Losses: </p>
+                <p>Your total score is:</p>
+                <p class="yourNumber">0</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="rows col-md-12 float-left ml-5">
+            <section>
+                <button type="button" class="btn btn-light"><img id="crystalValue" src="assets/images/crystalOne.png" alt=""> </button>
+                
+                <button type="button" class="btn btn-light"><img id="crystalValueTwo" src="assets/images/crystalTwo.png" alt=""></button>
+
+                <button type="button" class="btn btn-light"><img id="crystalValueThree" src="assets/images/crystalThree.png" alt=""></button>
+                
+                <button type="button" class="btn btn-light"><img id="crystalValueFour" src="assets/images/crystalFour.png" alt=""></button>
+            </section>
+        </div>
+    </div>
+    
 
     <script src="assets/javascript/game.js">
 

@@ -18,6 +18,8 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
        chosenNumber.text("Match my number: " + compNumber); //chosen number will be anywhere between 19 - 120.
        
+       yourNumber = 0;
+
        crystalValues();
 
     }
@@ -46,13 +48,13 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
     function assignCrystalValue() { //Assigning the crystals different values every time game initiates
 
         //crystal buttons
-        initializeGame();
         
         $("#crystalValue").on("click", function() {
                 
             $(".yourNumber").html(yourNumber += crystalValueArr[0]);
 
-            wlCounter();
+            winGame();
+            loseGame();
 
         }); 
         
@@ -60,7 +62,8 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
             $(".yourNumber").html(yourNumber += crystalValueArr[1]);
 
-            wlCounter();
+            winGame();
+            loseGame();
 
         }); 
 
@@ -68,7 +71,8 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
             $(".yourNumber").html(yourNumber += crystalValueArr[2]);
 
-            wlCounter();
+            winGame();
+            loseGame();
 
         }); 
 
@@ -76,7 +80,8 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
             $(".yourNumber").html(yourNumber += crystalValueArr[3]);
 
-            wlCounter();
+            winGame();
+            loseGame();
             
         }); 
         
@@ -84,41 +89,67 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
     }
 
     //TODO: add win/loss counter if user hits or goes over comp number
+    
+    // function wlCounter() { //Counts user wins if user is able to match their number to the computer number
 
-    function wlCounter() { //Counts user wins if user is able to match their number to the computer number
+    //     // if user number is equal to the random generated number
+    //     // increment winCounter by 1
+    //     // display on screen
+    //     // restart game
 
-        // if user number is equal to the random generated number
-        // increment winCounter by 1
-        // display on screen
-        // restart game
-
-        // if user number is greater than or equal to the random generated number
-        // increment lossCounter by 1
-        // display on screen
-        // restart game
+    //     // if user number is greater than or equal to the random generated number
+    //     // increment lossCounter by 1
+    //     // display on screen
+    //     // restart game
         
-        if (yourNumber === compNumber) { //if user number is equal to random generated number
+    //     // if (yourNumber === compNumber) { //if user number is equal to random generated number
+
+    //     //     winCounter++; // increement win counter by 1, if condition is met.
+
+    //     //     $(".winCounter").html("Wins: " + winCounter); //display number of wins on HTML 
+
+    //         // initializeGame(); //re-initialize game
+            
+    //     // } else if (yourNumber > compNumber) { //if user number is greater than or equal to random generated number
+
+    //     //     lossCounter++; //increase loss counter by 1
+
+    //     //     $(".lossCounter").html("Losses: " + lossCounter); //display loss counter on HTML
+
+    //     //     // initializeGame(); // re-initialize game
+
+    //     // }
+
+    //     console.log(compNumber);
+    //     console.log(yourNumber);
+    //     console.log(winCounter);
+    //     console.log(lossCounter);
+    // }
+
+    function winGame() {
+
+        if (yourNumber === compNumber) { //if user number is equal to random generated number ---------- this isn't registering wins, but losses are registering?
 
             winCounter++; // increement win counter by 1, if condition is met.
 
             $(".winCounter").html("Wins: " + winCounter); //display number of wins on HTML 
 
-            // initializeGame(); //re-initialize game
-            
-        } else if (yourNumber > compNumber) { //if user number is greater than or equal to random generated number
-
-            lossCounter++; //increase loss counter by 1
-
-            $(".lossCounter").html("Losses: " + lossCounter); //display loss counter on HTML
-
-            // initializeGame(); // re-initialize game
-
+            initializeGame();
         }
 
-        console.log(compNumber);
-        console.log(yourNumber);
-        console.log(winCounter);
-        console.log(lossCounter);
+    }
+
+    function loseGame() {
+
+        if (yourNumber > compNumber) {
+
+            lossCounter++;
+
+            $(".lossCounter").html("Losses: " + lossCounter);
+
+            initializeGame();
+        }
+
     }
 
     initializeGame(); //Starts game when page loads.
