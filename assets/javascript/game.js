@@ -7,10 +7,6 @@ var yourNumber = 0;
 var compNumber = Math.floor(Math.random() * 120) + 19;
 
 var crystalValueArr = [];
-var crystalValueOne = $("#crystalValue");
-var crystalValueTwo = $("#crystalValueTwo"); 
-var crystalValueThree = $("#crystalValueThree"); 
-var crystalValueFour = $("#crystalValueFour"); 
 
 $(document).ready(function() { //Checking if the page is ready to load the game.
 
@@ -101,7 +97,6 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
 
     function winGame() {
 
-        console.log("current number(win): " +yourNumber);
         console.log(compNumber);
         console.log(yourNumber === compNumber);
         console.log("wins: " +winCounter);
@@ -125,7 +120,6 @@ $(document).ready(function() { //Checking if the page is ready to load the game.
     function loseGame() {
         
         console.log("losses: " + lossCounter);
-        console.log("current number(loss): " + yourNumber);
 
         if (yourNumber > compNumber) {
 
