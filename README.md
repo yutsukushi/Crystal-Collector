@@ -10,3 +10,5 @@ A responsive jQuery game.
     You win the game by matching your crystal score to the number on the board.
 
     You will lose if your crystal score goes over the number on the board.
+    
+    https://yutsukushi.github.io/unit-4-game/
