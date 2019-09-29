@@ -15,7 +15,7 @@ You will lose if your crystal score goes over the number on the board.
 
 ## Deployed version
 
-https://yutsukushi.github.io/unit-4-game/
+https://yutsukushi.github.io/Crystal-Collector/
 
 ## Technologies used
 
