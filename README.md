@@ -1,4 +1,4 @@
-# unit-4-game
+# Crystal-Collector
 A responsive jQuery game.
 
 ![Crystal Collector website](assets/images/crystalcollector.png)
